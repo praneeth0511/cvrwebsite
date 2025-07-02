@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CvrCollege</title>
-    <link rel="icon" href="logo.webp">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>CVR COLLEGE OF ENGINEERING</h1>
-    <header>
-    <div class="header">
-        <img src="logo.webp" alt="logo" width="100px">
-        <div class="links">
-        <a href="home.html">Home</a>
-        <a href="Dept.html">Dept</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">register</a>
-        </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    <style>
+        
+        .main{
 
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: groove;
+            border-radius: 12px;
+            width: auto;
+            height: fit-content;
+            border-color: black;
+            background-color: rgb(233, 221, 223);
+        }
+        .button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }                                           
+    </style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; margin-top: 35%;">
+    <div class="main">
+        <h1>Calculator</h1><hr>
+        <div>
+        <label for="a">Enter a value</label>
+        <input type="number" id="a"><br><br>
+        <label for="b">Enter b value</label>
+        <input type="number" id="b" required>
+        <br><br>
+        <div class="button">
+            <button onclick="sum()">Sum</button>
+            <button onclick="difference()">Difference</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <p id="result"></p>
+        </div>
     </div>
-    </header>
-    <h2>Welcome to cvr college of engineering</h2>
+    <script>
+        a=document.getElementById("a")
+        b=document.getElementById("b")
+        function sum(){
+            
+            c=Number(a.value)+Number(b.value)
+            //document.write("Value of a is"+a.value)
+            result=document.getElementById("result")
+            result.textContent="Sum is "+c
+        }
+        function difference(){
+            // a=document.getElementById("a")
+            // b=document.getElementById("b")
+            c=Number(a.value)-Number(b.value)
+            //document.write("Value of a is"+a.value)
+            result=document.getElementById("result")
+            result.textContent="Difference is "+c
+        }
+        function reset(){
+            a.value=null
+            b.value=null
+        }
+    </script>
 </body>
 </html>
